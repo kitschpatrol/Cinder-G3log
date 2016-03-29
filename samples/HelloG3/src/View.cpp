@@ -2,47 +2,43 @@
 // Created: 25 Oct 2015 1:51:10 pm
 // Copyright (c) 2015, HurleyWorks
 
-#include "View.h"
 #include "HelloG3App.h"
+#include "View.h"
 
 using namespace nanogui;
 using namespace ci;
 
 // ctor
 View::View()
-	: nanogui::Screen()
-{
+		: nanogui::Screen() {
 	mTheme = new Theme(mNVGContext);
 	LOG(DBUG) << __FUNCTION__;
 }
 
 // dtor
-View::~View()
-{
+View::~View() {
 	LOG(DBUG) << __FUNCTION__;
 }
 
-void View::create(WindowRef & ciWindow, HelloG3App * const app)
-{
+void View::create(WindowRef &ciWindow, HelloG3App *const app) {
 	this->app = app;
-	try
-	{
+	try {
 		setSize(ivec2(ciWindow->getSize().x, ciWindow->getSize().y));
 
 		initGraph(&fps, GRAPH_RENDER_FPS, "Frame Time");
 		initGraph(&cpuGraph, GRAPH_RENDER_MS, "CPU Time");
 
-		nanogui::Window * window = new nanogui::Window(this, "g3logger demo");
+		nanogui::Window *window = new nanogui::Window(this, "g3logger demo");
 		window->setPosition(ivec2(15, 15));
 		window->setLayout(new GroupLayout());
 
-		Button * b = new Button(window, "Multi-threading test");
+		Button *b = new Button(window, "Multi-threading test");
 		b->setFontSize(18);
-		b->setCallback([&] {this->app->spawnNewJobs(30); });
+		b->setCallback([&] { this->app->spawnNewJobs(30); });
 
 		b = new Button(window, "Crash on worker thread");
 		b->setFontSize(18);
-		b->setCallback([&] {this->app->spawnNewJobs(20, 10); });
+		b->setCallback([&] { this->app->spawnNewJobs(20, 10); });
 
 		b = new Button(window, "Crash (AccessViolation)");
 		b->setFontSize(18);
@@ -50,45 +46,40 @@ void View::create(WindowRef & ciWindow, HelloG3App * const app)
 
 		b = new Button(window, "Crash (SIGABRT)");
 		b->setFontSize(18);
-		b->setCallback([&] {this->app->raiseSIGABRT(); });
+		b->setCallback([&] { this->app->raiseSIGABRT(); });
 
 		new Label(window, "Performance test", "sans-bold");
 		b = new Button(window, "Log draw() and update()");
 		b->setFontSize(18);
 		b->setFlags(Button::ToggleButton);
-		b->setChangeCallback([&](bool state) { this->app->logFrames(state);});
+		b->setChangeCallback([&](bool state) { this->app->logFrames(state); });
 
 		new Label(window, "Dynamic Log levels", "sans-bold");
-		CheckBox * cb = new CheckBox(window, "Testing",
-			[](bool state){ g2::setLogLevel(TESTING, state);} );
-		cb->setChecked(false);
 
-		cb = new CheckBox(window, "Debug",
-			[](bool state){ g2::setLogLevel(DBUG, state); });
+		//		CheckBox *cb = new CheckBox(window, "Testing", [](bool state) { g3::setLogLevel(TESTING, state); });
+		//		cb->setChecked(false);
+
+		/*
+		cb = new CheckBox(window, "Debug", [](bool state) { g3::setLogLevel(DBUG, state); });
 		cb->setChecked(true);
 
-		cb = new CheckBox(window, "Info",
-			[](bool state){ g2::setLogLevel(INFO, state); });
+		cb = new CheckBox(window, "Info", [](bool state) { g3::setLogLevel(INFO, state); });
 		cb->setChecked(true);
 
-		cb = new CheckBox(window, "Warning",
-			[](bool state){ g2::setLogLevel(WARNING, state); });
+		cb = new CheckBox(window, "Warning", [](bool state) { g3::setLogLevel(WARNING, state); });
 		cb->setChecked(true);
+*/
 
-		cb = new CheckBox(window, "Critical",
-			[](bool state){ g2::setLogLevel(CRITICAL, state); });
-		cb->setChecked(true);
+		//		cb = new CheckBox(window, "Critical", [](bool state) { g3::setLogLevel(CRITICAL, state); });
+		//		cb->setChecked(true);
 
 		performLayout(mNVGContext);
-	}
-	catch (const std::exception & e)
-	{
-		LOG(CRITICAL) << e.what();
+	} catch (const std::exception &e) {
+		LOG(WARNING) << e.what();
 	}
 }
 
-void View::draw(double time)
-{
+void View::draw(double time) {
 	drawWidgets();
 
 	float x = 5;
@@ -97,61 +88,53 @@ void View::draw(double time)
 	renderGraph(mNVGContext, x + 200 + 5, y, &cpuGraph, nvgRGBA(0, 128, 0, 255));
 }
 
-bool View::mouseMove(MouseEvent e)
-{
+bool View::mouseMove(MouseEvent e) {
 	return cursorPosCallbackEvent(e.getPos().x, e.getPos().y);
 }
 
-bool View::mouseDown(MouseEvent e)
-{
-	if (!e.isLeft()) return false;
+bool View::mouseDown(MouseEvent e) {
+	if (!e.isLeft())
+		return false;
 	return mouseButtonCallbackEvent(MOUSE_BUTTON_LEFT, PRESS, 0);
 }
 
-bool View::mouseDrag(MouseEvent e)
-{
-	if (!e.isLeftDown()) return false;
+bool View::mouseDrag(MouseEvent e) {
+	if (!e.isLeftDown())
+		return false;
 	return cursorPosCallbackEvent(e.getPos().x, e.getPos().y);
 }
 
-bool View::mouseUp(MouseEvent e)
-{
-	if (!e.isLeft()) return false;
+bool View::mouseUp(MouseEvent e) {
+	if (!e.isLeft())
+		return false;
 	return mouseButtonCallbackEvent(MOUSE_BUTTON_LEFT, RELEASE, 0);
 }
 
-bool View::keyDown(KeyEvent e)
-{
+bool View::keyDown(KeyEvent e) {
 	if (e.getChar() > 32)
 		charCallbackEvent(e.getChar());
 	return keyCallbackEvent(e.getCode(), 0, PRESS, 0);
 }
 
-bool View::keyUp(KeyEvent e)
-{
+bool View::keyUp(KeyEvent e) {
 	return keyCallbackEvent(e.getCode(), 0, RELEASE, 0);
 }
 
-void View::updatePerfGraph(float dt, float cpuTime)
-{
+void View::updatePerfGraph(float dt, float cpuTime) {
 	updateGraph(&fps, dt);
 	updateGraph(&cpuGraph, cpuTime);
 }
 
-void View::postInfoMessage(const std::string & title, const std::string & msg)
-{
+void View::postInfoMessage(const std::string &title, const std::string &msg) {
 	auto dlg = new MessageDialog(this, MessageDialog::Type::Information, title, msg);
-	dlg->setCallback([](int result)
-	{
+	dlg->setCallback([](int result) {
 
 	});
 }
 
-void View::postWarningMessage(const std::string & title, const std::string & msg)
-{
+void View::postWarningMessage(const std::string &title, const std::string &msg) {
 	auto dlg = new MessageDialog(this, MessageDialog::Type::Warning, title, msg);
-	dlg->setCallback([](int result)
-	{
+	dlg->setCallback([](int result) {
 
 	});
 }

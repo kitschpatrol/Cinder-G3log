@@ -1,21 +1,21 @@
+#include "cinder/Rand.h"
 #include "cinder/app/App.h"
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
-#include "cinder/Rand.h"
 
 #include "../../framework/util/StdThreadPool.h"
-#include "Standard.h"
 #include "Log.h"
+#include "Standard.h"
+#include "Stopwatch.h"
 #include "View.h"
 
 using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-class HelloG3App : public App
-{
+class HelloG3App : public App {
 
- public:
+public:
 	HelloG3App();
 	~HelloG3App();
 
@@ -38,9 +38,11 @@ class HelloG3App : public App
 	void spawnNewJobs(int count, int crashJob = CRASH_JOB);
 	void crashByNullPointer();
 	void raiseSIGABRT();
-	void logFrames(bool state) { perFrameLogging = state; }
+	void logFrames(bool state) {
+		perFrameLogging = state;
+	}
 
- private:
+private:
 	LogRef log = nullptr;
 	ViewRef gui = nullptr;
 	StdThreadPool pool;
@@ -56,5 +58,3 @@ class HelloG3App : public App
 	static Rand rand;
 	static void task(const int jobNumber);
 };
-
-

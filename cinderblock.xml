@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <cinder>
 <block
-	name="ciG3log"
-	id="com.hurleyworks.g3log"
-	author="Steve Hurley"
+	name="G3log"
+	id="com.kitschpatrol.g3log"
+	author="Steve Hurley, Eric Mika"
 	license="public domain"
 	summary="Kjell Hedström's g3log"
-	url="https://github.com/Hurleyworks/G3LogBlock"
-	git="https://github.com/Hurleyworks/G3LogBlock.git"
+	url="https://github.com/kitschpatrol/Cinder-G3log"
+	git="https://github.com/kitschpatrol/Cinder-G3log.git"
 	>
 	<supports os="macosx" />
 	<supports os="msw" />
-
 	<copyExclude>samples</copyExclude>
-	<header>logger/g3logger.h</header>
-	<source>logger/g3Logger.cpp</source>
+	<headerPattern>src/*.h</headerPattern>
+	<sourcePattern>src/*.cpp</sourcePattern>
+	<includePath>include</includePath>
+	<platform os="macosx">
+					<staticLibrary>lib/macosx/g3log/libg3logger.a</staticLibrary>
+	</platform>				
+	<platform os="msw">
+		<includePath>src</includePath>
+	</platform>	
 </block>
 </cinder>
