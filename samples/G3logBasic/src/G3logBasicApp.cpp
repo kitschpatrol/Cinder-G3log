@@ -24,8 +24,7 @@ private:
 };
 
 void G3logBasicApp::setup() {
-	
-	log = std::make_shared<G3log>("G3logBasic", getAssetPath("logs"));
+	log = G3log::create("G3logBasic", getAssetPath("logs"));
 
 	G3_LOG_V(" OS Version " << System::getOsMajorVersion() << "." << System::getOsMinorVersion() << "." << System::getOsBugFixVersion());
 

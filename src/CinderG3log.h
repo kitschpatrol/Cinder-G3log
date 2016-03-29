@@ -26,10 +26,11 @@ typedef std::shared_ptr<class G3log> G3logRef;
 class G3log {
 
 public:
-	G3log(const std::string &appName, const ci::fs::path logFolder = "");
+	static G3logRef create(const std::string &appName, const ci::fs::path logFolder = "");
 	~G3log();
 
 private:
+	G3log(const std::string &appName, const ci::fs::path logFolder);
 	std::unique_ptr<g3::LogWorker> logWorker;
 	std::unique_ptr<g3::FileSinkHandle> fileHandle;
 	std::unique_ptr<CoutSinkHandle> coutHandle;
