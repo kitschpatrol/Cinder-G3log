@@ -48,11 +48,7 @@ struct CoutSink {
 			auto level = logEntry.get()._level;
 			auto color = GetColor(level);
 
-			
-			
-			
-			// get the whole default-formatted message: logEntry.get().toString()
-			
+			// to get the whole default-formatted message: logEntry.get().toString()
 			// custom format
 			std::cout << XCODE_COLORS_ESCAPE << "fg" << color << ";" << logEntry.get()._file << ":" << logEntry.get()._line << "\t" << logEntry.get()._message << XCODE_COLORS_RESET << std::endl;
 		} else {
