@@ -1,12 +1,12 @@
 #include "CinderG3log.h"
+#include "CinderToG3loggerRouter.h"
+#include "cinder/Log.h"
 
-
-G3logRef G3log::create(const std::string &appName, const ci::fs::path logFolder) {
-	return std::shared_ptr<G3log>(new G3log(appName, logFolder));
+G3logRef G3log::create(const std::string &appName, const ci::fs::path logFolder, bool redirectCinderLog) {
+	return std::shared_ptr<G3log>(new G3log(appName, logFolder, redirectCinderLog));
 }
 
-
-G3log::G3log(const std::string &appName, const ci::fs::path logFolder)
+G3log::G3log(const std::string &appName, const ci::fs::path logFolder, bool redirectCinderLog)
 		: logWorker(g3::LogWorker::createLogWorker())
 		, coutHandle(logWorker->addSink(std2::make_unique<CoutSink>(), &CoutSink::ReceiveLogMessage)) {
 
@@ -72,6 +72,24 @@ G3log::G3log(const std::string &appName, const ci::fs::path logFolder)
 #if WIN32
 	g3::setFatalPreLoggingHook([] { __debugbreak(); });
 #endif
+
+	// Take over CI_ log stuff
+	if (redirectCinderLog) {
+
+// Redefine where we can, more performant than the router
+#define CI_LOG_V G3_LOG_V
+#define CI_LOG_D G3_LOG_D
+#define CI_LOG_I G3_LOG_I
+#define CI_LOG_W G3_LOG_W
+#define CI_LOG_E G3_LOG_E
+#define CI_LOG_F G3_LOG_F
+
+		// Override all default cinder loggers. Add custom Cinder Logger class
+		// to capture all Cinder logging and redirect it to G3Log.
+		ci::log::manager()->clearLoggers();
+		ci::log::LoggerRef g3logRouter = ci::log::makeLogger<CinderToG3loggerRouter>();
+		ci::log::manager()->addLogger(g3logRouter);
+	}
 }
 
 G3log::~G3log() {
