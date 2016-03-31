@@ -1,6 +1,10 @@
 #pragma once
 
-#include "CoutSink.h"
+// Note:
+// To get stack traces on Windows release builds:
+// Project Properties--> Linker--> Debugging--> Generate Debug Info : Optimize for Debugging / DEBUG
+
+#include "ConsoleSink.h"
 #include "ExtraLogLevels.h"
 #include "G3log/G3log.hpp"
 #include "G3log/logworker.hpp"

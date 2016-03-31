@@ -24,12 +24,12 @@ private:
 };
 
 void G3logBasicApp::setup() {
-	log = G3log::create("G3logBasic", getAssetPath("logs"));
+	log = G3log::create("G3logBasic", getAssetPath("") / "logs", true);
 
 	G3_LOG_V(" OS Version " << System::getOsMajorVersion() << "." << System::getOsMinorVersion() << "." << System::getOsBugFixVersion());
 
 	mParams = params::InterfaceGl::create("Params", ivec2(170, 300));
-	mParams->addButton("Verbose", [&]() { G3_LOG_V("Verbose" << 1); }, "key=v");
+	mParams->addButton("Verbose", [&]() { G3_LOG_V("Verbose"); }, "key=v");
 	mParams->addButton("Debug", [&]() { G3_LOG_D("Debug"); }, "key=d");
 	mParams->addButton("Info", [&]() { G3_LOG_I("Info"); }, "key=i");
 	mParams->addButton("Warning", [&]() { G3_LOG_W("Warning"); }, "key=w");

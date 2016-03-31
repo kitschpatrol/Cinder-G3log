@@ -16,10 +16,18 @@
 	<sourcePattern>src/*.cpp</sourcePattern>
 	<includePath>include</includePath>
 	<platform os="macosx">
-					<staticLibrary>lib/macosx/g3log/libg3logger.a</staticLibrary>
+		<staticLibrary>lib/macosx/g3log/libg3logger.a</staticLibrary>
 	</platform>				
 	<platform os="msw">
 		<includePath>src</includePath>
+		<staticLibrary>lib/msw/x64/DbgHelp.Lib</staticLibrary>		
+		<buildCopy>lib/msw/x64/dbghelp.dll</buildCopy>		
+		<platform config="debug">
+			<staticLibrary>lib/msw/x64/g3loggerd.lib</staticLibrary>
+		</platform>
+		<platform config="release">
+			<staticLibrary>lib/msw/x64/g3logger.lib</staticLibrary>
+		</platform>
 	</platform>	
 </block>
 </cinder>

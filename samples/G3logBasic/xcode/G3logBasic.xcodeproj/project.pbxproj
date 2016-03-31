@@ -16,11 +16,17 @@
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
 		00B9955A1B128DF400A5C623 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995581B128DF400A5C623 /* IOKit.framework */; };
 		00B9955B1B128DF400A5C623 /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995591B128DF400A5C623 /* IOSurface.framework */; };
-		2E2F799D6DA14C43A4B02CB1 /* G3logBasicApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B890BF764C524A6CB7FD3B75 /* G3logBasicApp.cpp */; };
-		315D49FF664E4DCABF0859EA /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0C9F859093224CBDBDB139AB /* CinderApp.icns */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
-		7E23F48BD030437787BFC86B /* CinderG3log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87586DFA68D647339EBF89BB /* CinderG3log.cpp */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		4AD057B22659419ABD69CB58 /* CinderG3log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A7DAB74D7BA44A182C84959 /* CinderG3log.cpp */; };
+		C6D83683D9AF492A85B18FC9 /* ExtraLogLevels.h in Headers */ = {isa = PBXBuildFile; fileRef = 67DF37008FBD4DDBA09F670B /* ExtraLogLevels.h */; };
+		147EB641123E40C6BC21A17A /* CoutSink.h in Headers */ = {isa = PBXBuildFile; fileRef = F4E8A7CE1C6B49238455FA7A /* CoutSink.h */; };
+		02E657D6E7E0492B944FF3D4 /* CinderToG3loggerRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 58408D40AFFE42AF806A5CBC /* CinderToG3loggerRouter.h */; };
+		F230ABD5B06445F7AE991F2C /* CinderG3log.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B843AA315E4D4BAD9C93F3 /* CinderG3log.h */; };
+		8D0770062D4541D3B681F6E7 /* G3logBasic_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = CA989AE5208048DF98D4FAAA /* G3logBasic_Prefix.pch */; };
+		6D411F6D84B54BE3BF4ABEF2 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 54BFEA0B8AB54AAA919999F5 /* CinderApp.icns */; };
+		844B708F1FFE4298AE66783F /* Resources.h in Headers */ = {isa = PBXBuildFile; fileRef = D16743821D3D45658907DA70 /* Resources.h */; };
+		BC64EFE6E11043A588672723 /* G3logBasicApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6C3A2E351024115B21FA78C /* G3logBasicApp.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,20 +39,21 @@
 		00B784B20FF439BC000DE1D7 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		00B995581B128DF400A5C623 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		00B995591B128DF400A5C623 /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = System/Library/Frameworks/IOSurface.framework; sourceTree = SDKROOT; };
-		0C9F859093224CBDBDB139AB /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		252A39671CAA263C00CC50DE /* ExtraLogLevels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ExtraLogLevels.h; path = ../../../src/ExtraLogLevels.h; sourceTree = "<group>"; };
-		255013821CAA196800ED8DD7 /* CoutSink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoutSink.h; path = ../../../src/CoutSink.h; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
-		6A1E51782EDF44C2BD87BEC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7F7186D553304CCD8E1B52B9 /* G3logBasic_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = G3logBasic_Prefix.pch; sourceTree = "<group>"; };
-		87586DFA68D647339EBF89BB /* CinderG3log.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = CinderG3log.cpp; path = ../../../src/CinderG3log.cpp; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* G3logBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = G3logBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9EBBD9C944454E9EB267A4DD /* CinderG3log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CinderG3log.h; path = ../../../src/CinderG3log.h; sourceTree = "<group>"; };
-		B67E28A238B64831887B2AC8 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
-		B890BF764C524A6CB7FD3B75 /* G3logBasicApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = G3logBasicApp.cpp; path = ../src/G3logBasicApp.cpp; sourceTree = "<group>"; };
+		C6C3A2E351024115B21FA78C /* G3logBasicApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../src/G3logBasicApp.cpp; sourceTree = "<group>"; name = G3logBasicApp.cpp; };
+		D16743821D3D45658907DA70 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../include/Resources.h; sourceTree = "<group>"; name = Resources.h; };
+		54BFEA0B8AB54AAA919999F5 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; name = CinderApp.icns; };
+		23A236FA3C934DCCA558AED0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; name = Info.plist; };
+		CA989AE5208048DF98D4FAAA /* G3logBasic_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = G3logBasic_Prefix.pch; sourceTree = "<group>"; name = G3logBasic_Prefix.pch; };
+		59B843AA315E4D4BAD9C93F3 /* CinderG3log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../../src/CinderG3log.h; sourceTree = "<group>"; name = CinderG3log.h; };
+		58408D40AFFE42AF806A5CBC /* CinderToG3loggerRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../../src/CinderToG3loggerRouter.h; sourceTree = "<group>"; name = CinderToG3loggerRouter.h; };
+		F4E8A7CE1C6B49238455FA7A /* CoutSink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../../src/CoutSink.h; sourceTree = "<group>"; name = CoutSink.h; };
+		67DF37008FBD4DDBA09F670B /* ExtraLogLevels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../../src/ExtraLogLevels.h; sourceTree = "<group>"; name = ExtraLogLevels.h; };
+		4A7DAB74D7BA44A182C84959 /* CinderG3log.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../../../src/CinderG3log.cpp; sourceTree = "<group>"; name = CinderG3log.cpp; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,18 +78,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01B97315FEAEA392516A2CEA /* Blocks */ = {
-			isa = PBXGroup;
-			children = (
-				C04E155D13EB49719C6321EF /* G3log */,
-			);
-			name = Blocks;
-			sourceTree = "<group>";
-		};
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				B890BF764C524A6CB7FD3B75 /* G3logBasicApp.cpp */,
+				C6C3A2E351024115B21FA78C /* G3logBasicApp.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -114,17 +113,6 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		12262F227AAD4711B1B9E6B6 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				9EBBD9C944454E9EB267A4DD /* CinderG3log.h */,
-				87586DFA68D647339EBF89BB /* CinderG3log.cpp */,
-				255013821CAA196800ED8DD7 /* CoutSink.h */,
-				252A39671CAA263C00CC50DE /* ExtraLogLevels.h */,
-			);
-			name = src;
-			sourceTree = "<group>";
-		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,11 +134,39 @@
 			name = G3logBasic;
 			sourceTree = "<group>";
 		};
+		6773A2C674814D4782D02487 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				59B843AA315E4D4BAD9C93F3 /* CinderG3log.h */,
+				58408D40AFFE42AF806A5CBC /* CinderToG3loggerRouter.h */,
+				F4E8A7CE1C6B49238455FA7A /* CoutSink.h */,
+				67DF37008FBD4DDBA09F670B /* ExtraLogLevels.h */,
+				4A7DAB74D7BA44A182C84959 /* CinderG3log.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		97D7B172CCB742509F9D1849 /* G3log */ = {
+			isa = PBXGroup;
+			children = (
+				6773A2C674814D4782D02487 /* src */,
+			);
+			name = G3log;
+			sourceTree = "<group>";
+		};
+		01B97315FEAEA392516A2CEA /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				97D7B172CCB742509F9D1849 /* G3log */,
+			);
+			name = Blocks;
+			sourceTree = "<group>";
+		};
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				B67E28A238B64831887B2AC8 /* Resources.h */,
-				7F7186D553304CCD8E1B52B9 /* G3logBasic_Prefix.pch */,
+				D16743821D3D45658907DA70 /* Resources.h */,
+				CA989AE5208048DF98D4FAAA /* G3logBasic_Prefix.pch */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -158,8 +174,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0C9F859093224CBDBDB139AB /* CinderApp.icns */,
-				6A1E51782EDF44C2BD87BEC4 /* Info.plist */,
+				54BFEA0B8AB54AAA919999F5 /* CinderApp.icns */,
+				23A236FA3C934DCCA558AED0 /* Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -171,14 +187,6 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C04E155D13EB49719C6321EF /* G3log */ = {
-			isa = PBXGroup;
-			children = (
-				12262F227AAD4711B1B9E6B6 /* src */,
-			);
-			name = G3log;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,8 +215,6 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			attributes = {
-			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "G3logBasic" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -233,7 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				315D49FF664E4DCABF0859EA /* CinderApp.icns in Resources */,
+				6D411F6D84B54BE3BF4ABEF2 /* CinderApp.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,8 +250,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E2F799D6DA14C43A4B02CB1 /* G3logBasicApp.cpp in Sources */,
-				7E23F48BD030437787BFC86B /* CinderG3log.cpp in Sources */,
+				BC64EFE6E11043A588672723 /* G3logBasicApp.cpp in Sources */,
+				4AD057B22659419ABD69CB58 /* CinderG3log.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,17 +262,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
+				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = G3logBasic_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = G3logBasic_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -291,12 +297,12 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = G3logBasic_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"NDEBUG=1",
 					"$(inherited)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = G3logBasic_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -316,7 +322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CINDER_PATH = ../../../../..;
+				CINDER_PATH = "../../../../..";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				ENABLE_TESTABILITY = YES;
@@ -326,7 +332,10 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../../../include";
+				USER_HEADER_SEARCH_PATHS = (
+					"\"$(CINDER_PATH)/include\" ../include",
+					../../../include,
+				);
 			};
 			name = Debug;
 		};
@@ -334,7 +343,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CINDER_PATH = ../../../../..;
+				CINDER_PATH = "../../../../..";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -342,7 +351,10 @@
 				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../../../include";
+				USER_HEADER_SEARCH_PATHS = (
+					"\"$(CINDER_PATH)/include\" ../include",
+					../../../include,
+				);
 			};
 			name = Release;
 		};

@@ -1,8 +1,0 @@
-		g3log created log at: Mon Mar 28 21:51:50 2016
-		LOG format: [YYYY/MM/DD hh:mm:ss uuu* LEVEL FILE->FUNCTION:LINE] message		(uuu*: microsecond counter since initialization of log worker)
-
-
-2016/03/28 21:51:50 0	INFO [G3logBasicApp.cpp->setup:27]	"LOGGER NOT INITIALIZED:
-		 OS Version 10.11.4"
-2016/03/28 21:51:59 8453761	DEBUG [CinderG3log.cpp->~Log:28]	"~Log"
-g3log g3FileSink shutdown at: 21:51:59

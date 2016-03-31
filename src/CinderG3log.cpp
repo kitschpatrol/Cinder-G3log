@@ -8,10 +8,15 @@ G3logRef G3log::create(const std::string &appName, const ci::fs::path logFolder,
 
 G3log::G3log(const std::string &appName, const ci::fs::path logFolder, bool redirectCinderLog)
 		: logWorker(g3::LogWorker::createLogWorker())
-		, coutHandle(logWorker->addSink(std2::make_unique<CoutSink>(), &CoutSink::ReceiveLogMessage)) {
+		, coutHandle(logWorker->addSink(std2::make_unique<ConsoleSink>(), &ConsoleSink::ReceiveLogMessage)) {
 
 	// Only log to file if a folder is specified
 	if (logFolder != "") {
+
+		// Create folder if needed
+
+
+
 		fileHandle = logWorker->addDefaultLogger(appName, logFolder.generic_string());
 	}
 
