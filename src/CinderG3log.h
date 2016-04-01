@@ -16,7 +16,7 @@
 #define G3_LOG_D(stream) LOG(DBUG) << stream
 #define G3_LOG_I(stream) LOG(INFO) << stream
 #define G3_LOG_W(stream) LOG(WARNING) << stream
-#define G3_LOG_E(stream) LOG(ERROR) << stream
+#define G3_LOG_E(stream) LOG(G3_ERROR) << stream
 #define G3_LOG_F(stream) LOG(FATAL) << stream
 
 //! Debug macro to simplify logging an exception, which also prints the exception type

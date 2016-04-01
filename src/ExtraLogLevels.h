@@ -4,4 +4,4 @@
 
 // Extra levels to match Cinder's
 const LEVELS VERBOSE{g3::kDebugVaulue - 1, {"VERBOSE"}};
-const LEVELS ERROR{g3::kWarningValue + 1, {"ERROR"}};
+const LEVELS G3_ERROR{g3::kWarningValue + 1, {"ERROR"}};

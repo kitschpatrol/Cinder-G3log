@@ -28,7 +28,7 @@ private:
 				return WARNING;
 				break;
 			case ci::log::LEVEL_ERROR:
-				return ERROR;
+				return G3_ERROR;
 				break;
 			case ci::log::LEVEL_FATAL:
 				return FATAL;

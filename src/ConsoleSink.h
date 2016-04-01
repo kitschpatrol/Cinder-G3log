@@ -40,7 +40,7 @@ struct ConsoleSink {
 		if (level.value == DBUG.value) {
 			return "0,255,0"; // green
 		}
-		if ((level.value == ERROR.value) || g3::internal::wasFatal(level)) {
+		if ((level.value == G3_ERROR.value) || g3::internal::wasFatal(level)) {
 			return "255,0,0"; // red
 		}
 		return "255,255,255";

@@ -24,7 +24,7 @@ private:
 };
 
 void G3logBasicApp::setup() {
-	log = G3log::create("G3logBasic", getAssetPath("") / "logs", true);
+	log = G3log::create("G3logBasic", getAssetPath("logs"), true);
 
 	G3_LOG_V(" OS Version " << System::getOsMajorVersion() << "." << System::getOsMinorVersion() << "." << System::getOsBugFixVersion());
 

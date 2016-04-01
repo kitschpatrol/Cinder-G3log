@@ -12,11 +12,6 @@ G3log::G3log(const std::string &appName, const ci::fs::path logFolder, bool redi
 
 	// Only log to file if a folder is specified
 	if (logFolder != "") {
-
-		// Create folder if needed
-
-
-
 		fileHandle = logWorker->addDefaultLogger(appName, logFolder.generic_string());
 	}
 
@@ -60,9 +55,9 @@ G3log::G3log(const std::string &appName, const ci::fs::path logFolder, bool redi
 #endif
 
 #if (G3_MIN_LOG_LEVEL <= 4)
-	g3::only_change_at_initialization::setLogLevel(ERROR, true);
+	g3::only_change_at_initialization::setLogLevel(G3_ERROR, true);
 #else
-	g3::only_change_at_initialization::setLogLevel(ERROR, false);
+	g3::only_change_at_initialization::setLogLevel(G3_ERROR, false);
 #endif
 
 #if (G3_MIN_LOG_LEVEL <= 5)
