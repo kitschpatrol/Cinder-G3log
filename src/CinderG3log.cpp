@@ -88,7 +88,7 @@ G3log::G3log(const std::string &appName, const ci::fs::path logFolder, bool redi
 		// to capture all Cinder logging and redirect it to G3Log.
 		ci::log::manager()->clearLoggers();
 		ci::log::LoggerRef g3logRouter = ci::log::makeLogger<CinderToG3loggerRouter>();
-		ci::log::manager()->addLogger(g3logRouter);
+		// ci::log::manager()->addLogger(g3logRouter); // no need, make logger adds it to the stack
 	}
 }
 

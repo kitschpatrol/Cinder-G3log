@@ -1,8 +1,8 @@
 #pragma once
 #include "ExtraLogLevels.h"
+#include "cinder/app/Platform.h"
 #include "g3log/logmessage.hpp"
 #include "g3log/logworker.hpp"
-#include "cinder/app/Platform.h"
 #include <iostream>
 #include <string>
 
@@ -26,8 +26,6 @@ struct ConsoleSink {
 #define XCODE_COLORS_RESET XCODE_COLORS_ESCAPE ";"			// Clear any foreground or background color
 		}
 #endif
-
-
 
 		// TODO Linux xterm color
 		// http://stackoverflow.com/questions/2616906/how-do-i-output-coloured-text-to-a-linux-terminal
